@@ -12,13 +12,32 @@ I have a Master of Science Phil. (Statistics/Quality Engineerng) in which I addi
 
 ## Comparisons
 
-The models that I trained and compared are described as follows:
+Two different comparisons were made:
+1. Effect of retraining varying numbers of convolutional layers
+2. Vgg16 vs Resnet50 vs InceptionV3
 
+## Results
 
+### Effect of retraining varying numbers of convolutional layers
+
+#### Table 1
+![alt text](https://github.com/macnaughtond/distracted-driver/table-1.png "Results Table 1")
+
+Table 1 shows the loss of various models calculated as 0.31x(Kaggle Public Leaderboard Loss) + 0.69*(Kaggle Private Leaderboard Loss).  Freezing the first 10/31 layers and mild retraining of the remaining convolutional layers seemed to produce a lower loss than when all of the convolutional layers were retrained and none of the layers were retrained.
+
+### Vgg16 vs Resnet50 vs InceptionV3
+
+Vgg16 seemed to be the best of the three pretrained models that were adapted to distracted driver classification.  Vgg16 is a comparitively large model containing a lot of features.  It is said to be better for transfer learning than Resnet and Inception. See notebooks for details.
+
+## Discussion
+
+The comparison is slighly flawed as the case in which 10 layers were frozen, and the rest were retrained, the learning rate was set at 0.00001 for 2 epochs (saved as weights7_vgg16final_c) followed by a step down in the learning to 0.000005 for another 2 epochs.  Both other cases, all convolutional layers retrained (Phase 7A) and all convolutional layers retained (Phase 7B) were left with a training rate of 0.00001 which would have lead to slighly more overfitting and less general models. Phase 7A results (retraining of all layers) also missed out on the benefit of pseudo labeled training data for the first of 4 epochs, though this would have been diluted by the subsequent 3 epochs of training. To make completely fair comparions, the experiment should be repeated with a standardised method.  
+
+Regardless, the best model produced involved annealing of the upper 2/3rds of the convolution model (Phase 7D: weights7_vgg16final_d.h5). This model achieved a cross-entropy loss of [0.493,0.54] (private, public leaderboard losses) when graded by the Kaggle.com website which places the result in the top quartile of final results on the public leader board (somewhere between [21.9%,23.9%]).
 
 ## Conclusions
 
-The model achieved a cross-entropy loss of [0.493,0.54] (31%,69%) when graded by the Kaggle.com website which places the result in the top quartile of final results on the public leader board (somewhere between [21.9%,23.9%]). This good result was achieved using only resources/methods that were available in 2015, including:
+The best model achieved a top quartile result according to the kaggle.com final public leader board result for the State Farm distracted driver classification problem. This good result was achieved using only resources/methods that were available in 2015, including:
 - Transfer learning from Vgg16 convolutional layers
 - Lightweight hidden dense layers (128 filters + 128 filters) with batch normalisation to improve convergence spd
 - Using data augmentation (no dropout) and high quality pseudo labeling data to prevent over fitting
