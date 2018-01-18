@@ -37,7 +37,7 @@ Regardless, the best model produced involved annealing of the upper 2/3rds of th
 
 ## Conclusions
 
-The best model achieved a top quartile result according to the kaggle.com final public leader board result for the State Farm distracted driver classification problem. This good result was achieved using only resources/methods that were available in 2015, including:
+The best model (Phase 7d) achieved a top quartile performance in the State Farm distracted driver classification problem as measure by kaggle.com's loss evaluator and their final public leader board results. This good result was achieved using only resources/methods that were available in 2015, including:
 - Transfer learning from Vgg16 convolutional layers
 - Lightweight hidden dense layers (128 filters + 128 filters) with batch normalisation to improve convergence spd
 - Using data augmentation (no dropout) and high quality pseudo labeling data to prevent over fitting
