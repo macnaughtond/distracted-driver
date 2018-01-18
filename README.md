@@ -6,8 +6,9 @@ Subject: Deep learning models for classifying driving as good or 1 of 9 distract
 
 For background on the distracted driver problem, data set and related Kaggle competion, please go to https://www.kaggle.com/c/state-farm-distracted-driver-detection   
 
-The distracted driver classification is difficult when the training data set only provides around 50 subjects (disregard the total number of training images for now). Skin tone, hair colour/style and clothing colour/style are hugely variable amongst the test subjects, whilst the variation between posture-detection categories (within-subject) is quite small. I could not visually distinguish or agree with the classification boundary between many of the radio and grooming distinctions; radio vs reaching behind vs talking to passenger; good driving looking right vs talking to passenger; good driving looking at rear view mirror vs makeup.
+The distracted driver classification is difficult when the training data set only provides around 50 subjects (disregard the total number of training images for now). Skin tone, hair colour/style and clothing colour/style are hugely variable amongst the test subjects, whilst the variation between posture-detection categories (within-subject) is quite small. I could not visually distinguish or agree with the classification boundary between many of the radio tuning vs and grooming classifications; radio tuning vs reaching behind vs talking to passenger; good driving (when looking to right, presumably at an intersection) vs talking to passenger; and good driving (when looking at rear view mirror) vs makeup.
 
+I have a Master of Science Phil. (Statistics/Quality Engineerng) in which I additionally completed coursework in Advance Multivariate Statistics, Mathematical Statistics, and Data Mining/Machine Learning. The purpose of this repository is to demonstrate my practical skills in Deep Learning using Python | Numpy | Pandas | Keras | Theano. 
 
 ## Comparisons
 
