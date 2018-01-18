@@ -29,7 +29,7 @@ Loss* (calculated as weighted average) = 0.31x(Kaggle Public Leaderboard Loss) +
 
 The column titled "Equivalent Effort" described how much training was applied relative to the common source, model weights4_vgg16final.h5. Equivalent Effort describes the layer numbers (in the convolutional model) which were trained, the number of epoch and the learning rate which was applied.  The mini-batch size was consistently set to 64.
 
-### Vgg16 vs Resnet50 vs InceptionV3
+#### Vgg16 vs Resnet50 vs InceptionV3
 
 Vgg16 seemed to be the best of the three pretrained models that were adapted to distracted driver classification.  Vgg16 is a comparitively large model containing a lot of features.  It is said to be better for transfer learning than Resnet and Inception. See notebooks for details.
 
