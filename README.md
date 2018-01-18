@@ -18,7 +18,7 @@ Two different comparisons were made:
 
 ## Results
 
-### Effect of retraining varying numbers of convolutional layers
+#### Effect of retraining varying numbers of convolutional layers
 
 #### Table 1
 ![alt text](./table-1.png "Results Table 1")
@@ -34,8 +34,8 @@ Freezing the first 10/31 layers and mild retraining of the remaining convolution
 Vgg16 seemed to be the best of the three pretrained models that were adapted to distracted driver classification.  Vgg16 is a comparitively large model containing a lot of features.  It is said to be better for transfer learning than Resnet and Inception. See notebooks for details.
 
 ## Discussion
-
-The comparison is slighly flawed as the case in which 10 layers were frozen, and the rest were retrained, the learning rate was set at 0.00001 for 2 epochs (saved as weights7_vgg16final_c) followed by a step down in the learning to 0.000005 for another 2 epochs.  Both other cases, all convolutional layers retrained (Phase 7A) and all convolutional layers retained (Phase 7B) were left with a training rate of 0.00001 which would have lead to slighly more overfitting and less general models. Phase 7A results (retraining of all layers) also missed out on the benefit of pseudo labeled training data for the first of 4 epochs, though this would have been diluted by the subsequent 3 epochs of training. To make completely fair comparions, the experiment should be repeated with a standardised method.  
+#### Effect of retraining varying numbers of convolutional layers
+The methodology for comparing models with varying amount of Vgg16 convolutional model annealing is slighly flawed as the case in which 10 layers were frozen, and the rest were retrained, the learning rate was set at 0.00001 for 2 epochs (saved as weights7_vgg16final_c) followed by a step down in the learning to 0.000005 for another 2 epochs.  Both other cases, all convolutional layers retrained (Phase 7A) and all convolutional layers retained (Phase 7B) were left with a training rate of 0.00001 which would have lead to slighly more overfitting and less general models. Phase 7A results (retraining of all layers) also missed out on the benefit of pseudo labeled training data for the first of 4 epochs, though this would have been diluted by the subsequent 3 epochs of training. To make completely fair comparions, the experiment should be repeated with a standardised method.  
 
 Regardless, the best model produced involved annealing of the upper 2/3rds of the convolution model (Phase 7D: weights7_vgg16final_d.h5). This model achieved a cross-entropy loss of [0.493,0.54] (private, public leaderboard losses) when graded by the Kaggle.com website which places the result in the top quartile of final results on the public leader board (somewhere between [21.9%,23.9%]).
 
