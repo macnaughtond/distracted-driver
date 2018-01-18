@@ -23,7 +23,11 @@ Two different comparisons were made:
 #### Table 1
 ![alt text](./table-1.png "Results Table 1")
 
-Table 1 shows the loss of various models calculated as 0.31x(Kaggle Public Leaderboard Loss) + 0.69*(Kaggle Private Leaderboard Loss).  Freezing the first 10/31 layers and mild retraining of the remaining convolutional layers seemed to produce a lower loss than when all of the convolutional layers were retrained and none of the layers were retrained.
+Table 1 shows the loss* of various models as calculated by data provided by kaggle's submission evaluator.
+
+Freezing the first 10/31 layers and mild retraining of the remaining convolutional layers seemed to produce a lower loss than when all of the convolutional layers were retrained and none of the layers were retrained.
+
+* Loss (calculated as weighted average) = 0.31x(Kaggle Public Leaderboard Loss) + 0.69*(Kaggle Private Leaderboard Loss).  
 
 ### Vgg16 vs Resnet50 vs InceptionV3
 
